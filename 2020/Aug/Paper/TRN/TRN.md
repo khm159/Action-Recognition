@@ -45,11 +45,11 @@ Action detection은 크게 online action detection 과 offline action detection�
 
 [논문에 대한 개요]
 
-__- 이전 연구결과들은 과거 또는 현재의 정보만을 이용해 판단 하였다.
+__- 이전 연구결과들은 과거 또는 현재의 정보만을 이용해 판단 하였다.__
 
-__- 미래를 예측하여 판단에 이용하는 구조가 detection 성능을 향상시킬지를 본 논문에서 검증하였다.
+__- 미래를 예측하여 판단에 이용하는 구조가 detection 성능을 향상시킬지를 본 논문에서 검증하였다.__
 
-__- RNN cell 자체에 Decoder RNN cell를 포함하여  Future state를 생성하고 이를 예측에 이용한다. 
+__- RNN cell 자체에 Decoder RNN cell를 포함하여  Future state를 생성하고 이를 예측에 이용한다.__
 
 
 
