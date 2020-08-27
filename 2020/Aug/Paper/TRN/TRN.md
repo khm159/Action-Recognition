@@ -46,3 +46,8 @@ TRN 이전에도 LSTM등 RNN을 많이 사용하였지만, 미래의 정보까�
 
 3.TRN Cell 구조
 ---------------
+
+먼저 전체적인 구조는 일반적인 RNN Cell과 동일합니다.
+
+<img src="/2020/Aug/Paper/TRN/img/02.PNG" width="50%" height="40%" title="문제 정의" alt="TRN Cell 01"></img>
+
