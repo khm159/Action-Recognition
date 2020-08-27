@@ -96,7 +96,25 @@ TRN Cell은 Cell 내부에 연속된 decoder RNN cell을 내장하고 있는것�
 임베딩된 hidden state vector와 image feature vector를 이용해 decoder RNN cell은 이어질 미래의 프레임 t에 대한 각 확률벡터를 예측합니다.
 이전 cell 에서 산출된 action score는 각 decoder cell 에서 생성된 pt를 역시 fully connected layer를 통해 linear transformation 하여 다음 rnn cell에 입력합니다.
 
+<img src="/2020/Aug/Paper/TRN/img/08.PNG" width="60%" height="60%" title="문제 정의" alt="TRN Cell 01"></img>
 
+백본 RNN cell의 출력을 각 시점에 대한 future representation vector ft로 사용합니다. 
+이렇게 프레임it에 대한 미래의 ld 만큼의 프레임을 예측하는 future representation sequence가 생성됩니다. 
+
+<img src="/2020/Aug/Paper/TRN/img/09.PNG" width="60%" height="60%" title="문제 정의" alt="TRN Cell 01"></img>
+
+Future gate에서는 temporal decoder에서 생성된 벡터 시퀀스를 STA RNN 셀에 입력 벡터로 입력하기 위해 
+하나의 벡터로 사상하기 위한 fully connected 레이어를 두었으며, 이전에 먼저 average pooling을 수행한 뒤 fc레이어를 거쳐 
+벡터 ~xt로 임베딩합니다. 활성화 함수는 relu를 사용합니다.
+
+<img src="/2020/Aug/Paper/TRN/img/10.PNG" width="60%" height="60%" title="문제 정의" alt="TRN Cell 01"></img>
+
+최종적으로 TRN cell의 확률벡터를 출력하는 STA RNN Cell은 총 2개의 입력을 받습니다. 
+Future gate의 출력 벡터와 현재 프레임의 image feature 벡터를 concatenate한 입력벡터
+이전 TRN cell의 hidden state 
+
+해당 cell의 출력인 hidden state ht를 마지막으로 classification layer인 fully connected layer에 입력합니다. 
+소프트맥스를 통해서 최종 행동분류 확률 벡터를 출력합니다. 
 
 
 4.2 Future gate
