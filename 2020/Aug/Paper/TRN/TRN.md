@@ -5,13 +5,6 @@ Temporal Recurrent Networks for Online Action Detection
 
 틀린곳이 있다면 지적해주시면 감사할거 같아요. 
 
-메일 : khm159@naver.com
-
-
-
-
-
-
 논문 링크 : https://arxiv.org/pdf/1811.07391.pdf
 
 저자 정보 : Mingze Xu, Mingfei Gao, Yi-Ting Chen, Larry S. Davis, and David J. Crandall
