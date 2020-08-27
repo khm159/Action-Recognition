@@ -119,10 +119,19 @@ Future gate에서는 temporal decoder에서 생성된 벡터 시퀀스를 STA RN
 Future gate의 출력 벡터와 현재 프레임의 image feature 벡터를 concatenate한 입력벡터
 이전 TRN cell의 hidden state 
 
-해당 cell의 출력인 hidden state ht를 마지막으로 classification layer인 fully connected layer에 입력합니다. 
-소프트맥스를 통해서 최종 행동분류 확률 벡터를 출력합니다. 
+해당 cell의 출력인 hidden state ht를 마지막으로 classification layer인 fully connected layer에 입력합니다. 소프트맥스를 통해서 최종 행동분류 확률 벡터를 출력합니다. 이러한 과정을 거쳐 TRN Cell은 각 프레임이 들어올 때 마다 미래 상태까지 고려한 결과를 출력하게 되는 것입니다.
 
+5.1 Discussion
+---------------------
 
+5.2 Results
+---------------------
+
+5.3 Conclusion
+---------------------
+
+5.4 Implementation
+---------------------
 
 
 
