@@ -82,20 +82,27 @@ __Temporal decoder 모듈, future gate,  Spatio Temporal accumulator 입니다._
 4.1 Temporal Decoder
 -------------------- 
 
+먼저, TRN의 핵심이라고 할 수 있는 Temporal Decoder에 대해 설명드리겠습니다.  
+<img src="/2020/Aug/Paper/TRN/img/05.PNG" width="50%" height="40%" title="문제 정의" alt="TRN Cell 01"></img>
+
+TRN Cell은 Cell 내부에 연속된 decoder RNN cell을 내장하고 있는것이 특징입니다. TRN Cell에서 사용된 RNN Cell들은, 기본적인 RNNCell의 입출력 구조를 가지고 있으면, 어떤것이든지 백본으로 사용가능합니다. 예를들면, 대표적인 GRU나 LSTM과 같은 것이 있겠습니다. 논문 저자들은 LSTM을 백본으로 사용하였습니다. 
+
+<img src="/2020/Aug/Paper/TRN/img/06.PNG" width="50%" height="40%" title="문제 정의" alt="TRN Cell 01"></img>
+입력되는 hidden state를 바로 쓰지 않고 embedding layer인 fully connected 를 거쳐 linear transformation한 벡터를 입력합니다.
+
+<img src="/2020/Aug/Paper/TRN/img/07.PNG" width="50%" height="40%" title="문제 정의" alt="TRN Cell 01"></img>
+임베딩된 hidden state vector와 image feature vector를 이용해 decoder RNN cell은 이어질 미래의 프레임 t에 대한 각 확률벡터를 예측합니다.
+이전 cell 에서 산출된 action score는 각 decoder cell 에서 생성된 pt를 역시 fully connected layer를 통해 linear transformation 하여 다음 rnn cell에 입력합니다.
+
+
+
+
 4.2 Future gate
 --------------------
 
 4.3 Spatio Temporal Accumulator
 --------------------
 
-5. Results
---------------------
-
-6. Discussion
---------------------
-
-7. Conclusion
---------------------
 
 
 
