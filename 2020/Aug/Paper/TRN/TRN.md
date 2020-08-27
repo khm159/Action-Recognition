@@ -51,4 +51,4 @@ TRN 이전에도 LSTM등 RNN을 많이 사용하였지만, 미래의 정보까�
 
 <img src="/2020/Aug/Paper/TRN/img/02.PNG" width="50%" height="40%" title="문제 정의" alt="TRN Cell 01"></img>
 
-출처 : TRN 논문[https://arxiv.org/pdf/1811.07391.pdf] 
+이미지 출처 : TRN 논문 : https://arxiv.org/pdf/1811.07391.pdf 
