@@ -37,6 +37,8 @@ Action detection은 크게 online action detection 과 offline action detection�
 
 TRN 이전에도 LSTM등 RNN을 많이 사용하였지만, 미래의 정보까지 이용하지는 못했습니다.
 
+<img src="/2020/Aug/Paper/TRN/img/03.PNG" width="50%" height="40%" title="문제 정의" alt="TRN Cell 01"></img>
+
 3.TRN Cell 구조
 ---------------
 
@@ -47,6 +49,8 @@ TRN 이전에도 LSTM등 RNN을 많이 사용하였지만, 미래의 정보까�
 이미지 출처 : TRN 논문 : https://arxiv.org/pdf/1811.07391.pdf 
 
 본 논문에서는 online action detection 성능을 향상시키기 위해서 과거와 현재, 미래를 모두 고려하는 TRN 이라는 새로운 RNN cell 구조를 제안했습니다. TRN Cell도 일반적인 RNN Cell과 똑같이, 각 프레임에 대해서 feature extractor로 추출된 피처벡터 <img src="/2020/Aug/Paper/TRN/img/xt.PNG" width="2%" height="2%"></img>와 이전 시점의 hidden state <img src="/2020/Aug/Paper/TRN/img/h-1.PNG" width="4%" height="4%"></img>를 각 시점 t마다 입력으로 받습니다. 그리고 해당 시점마다 행동인지 아닌지, 만약 행동이라면 어떤 행동인지에 대한 확률 벡터 <img src="/2020/Aug/Paper/TRN/img/pt.PNG" width="2%" height="2%"></img>를 출력합니다. 그리고 다음 시점으로 hidden state <img src="/2020/Aug/Paper/TRN/img/ht.PNG" width="2%" height="2%"></img>를 넘겨줍니다. 
+
+
   
 
 
