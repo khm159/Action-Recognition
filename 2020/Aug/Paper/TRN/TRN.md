@@ -79,6 +79,23 @@ __Temporal decoder 모듈, future gate,  Spatio Temporal accumulator 입니다._
 3) Spatio Temporal Accumulator, 줄여서 STA 에서는 future gate에서 생성된 미래 상태벡터와 현재 프레임으로부터 입력된 feature 벡터, 그리고 이전 cell의 과거의 hidden state
 즉 과거, 미래, 현재의 정보를 모두 고려하여 시점 t에 대한 최종 확률 벡터를 출력합니다.
 
+4.1 Temporal Decoder
+-------------------- 
+
+4.2 Future gate
+--------------------
+
+4.3 Spatio Temporal Accumulator
+--------------------
+
+5. Results
+--------------------
+
+6. Discussion
+--------------------
+
+7. Conclusion
+--------------------
 
 
 
