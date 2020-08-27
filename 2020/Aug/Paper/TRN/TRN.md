@@ -66,7 +66,19 @@ __- RNN cell 자체에 Decoder RNN cell를 포함하여  Future state를 생성�
 
 본 논문에서는 online action detection 성능을 향상시키기 위해서 과거와 현재, 미래를 모두 고려하는 TRN 이라는 새로운 RNN cell 구조를 제안했습니다. TRN Cell도 일반적인 RNN Cell과 똑같이, 각 프레임에 대해서 feature extractor로 추출된 피처벡터 <img src="/2020/Aug/Paper/TRN/img/xt.PNG" width="2%" height="2%"></img>와 이전 시점의 hidden state <img src="/2020/Aug/Paper/TRN/img/h-1.PNG" width="4%" height="4%"></img>를 각 시점 t마다 입력으로 받습니다. 그리고 해당 시점마다 행동인지 아닌지, 만약 행동이라면 어떤 행동인지에 대한 확률 벡터 <img src="/2020/Aug/Paper/TRN/img/pt.PNG" width="2%" height="2%"></img>를 출력합니다. 그리고 다음 시점으로 hidden state <img src="/2020/Aug/Paper/TRN/img/ht.PNG" width="2%" height="2%"></img>를 넘겨줍니다. 
 
+<img src="/2020/Aug/Paper/TRN/img/04.PNG" width="50%" height="40%" title="문제 정의" alt="TRN Cell 01"></img>
 
-  
+TRN Cell은 3개의 핵심 모듈로 구성 되어 있습니다.
+
+__Temporal decoder 모듈, future gate,  Spatio Temporal accumulator 입니다.__
+
+1) Temporal decoder는 이전 hidden state와 현재 프레임에 해단 feature vector를 입력 받아 미래의 연속된 몇 개의 프레임에 대한 future representation 을 출력합니다.
+
+2) Future gate에서는 fully connected layer를 이용하여 이 future representation 들을 fusion 합니다. 
+
+3) Spatio Temporal Accumulator, 줄여서 STA 에서는 future gate에서 생성된 미래 상태벡터와 현재 프레임으로부터 입력된 feature 벡터, 그리고 이전 cell의 과거의 hidden state
+즉 과거, 미래, 현재의 정보를 모두 고려하여 시점 t에 대한 최종 확률 벡터를 출력합니다.
+
+
 
 
