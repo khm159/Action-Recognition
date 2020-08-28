@@ -121,10 +121,21 @@ Future gate의 출력 벡터와 현재 프레임의 image feature 벡터를 conc
 
 해당 cell의 출력인 hidden state ht를 마지막으로 classification layer인 fully connected layer에 입력합니다. 소프트맥스를 통해서 최종 행동분류 확률 벡터를 출력합니다. 이러한 과정을 거쳐 TRN Cell은 각 프레임이 들어올 때 마다 미래 상태까지 고려한 결과를 출력하게 되는 것입니다.
 
-5.1 Discussion
+학습 loss는 다음과 같습니다.
+
+decoder cell과 accumulator cell의 loss를 결합함으로써 훈련 과정에서 미래 프레임 예측이 STA의 예측 결과와 하나로 묶여
+좀더 유기적으로 연결된 학습이 가능해 질 것으로 저자들은 기대했습니다.
+
+Loss function은 크로스 엔트로피를 사용했고, 전체 loss를 summation 한 뒤 STA cell은 그냥 사용하고, decoder cell 의 loss는 scale factor를 이용하여 
+반영 비율을 적게 조정하여 사용하였습니다.
+학습시에는 online 이 아니라 offline 으로 미래 프레임에 직접 접근해 ground truth로 사용하여  decoder cell을 학습시켰고,
+test 때는 미래의 프레임에 접근하지 않고 예측된 프레임을 사용해 online으로 수행했습니다.  
+
+
+5.1 Results
 ---------------------
 
-5.2 Results
+5.2 Discussion
 ---------------------
 
 5.3 Conclusion
